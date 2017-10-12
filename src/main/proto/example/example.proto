@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+option java_multiple_files = false;
+option java_package = "com.example";
+option java_outer_classname = "BiDirectionalExampleService";
+
+package com.example;
+
+service ExampleService {
+    rpc Connect (stream RequestCall) returns (stream ResponseCall);
+}
+
+message RequestCall {
+    string requestId = 1;
+}
+
+message ResponseCall {
+    string requestId = 1;
+}
